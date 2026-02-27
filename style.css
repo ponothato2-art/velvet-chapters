@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    color: #640d0d;
+    color: #6b1414;
     background-color: #f4eeee;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body {
 }
 header {
     background-color: #f8f5f5;
-    color: white;
+    color: rgb(97, 17, 17);
     padding: 20px;
     text-align: center;
 }
@@ -35,7 +35,7 @@ main img {
     margin: 20px 0;
 }
 footer {
-    background-color: #fe9ac9;
+    background-color: #601516;
     color: white;
     text-align: center;
     padding: 10px;
