@@ -58,6 +58,6 @@ img {
     border-radius: 10px;
 }
 main a[href^="mailto:"] {
-    color: #050505;
+    color: #fcf7f7;
     font-weight: bold;
 }
