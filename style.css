@@ -4,8 +4,6 @@ body {
     background-image: url(background.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: inherit;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -78,7 +76,6 @@ body {
 
 .ebook-section {
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
   padding: 20px;
 }
 
@@ -88,7 +85,7 @@ body {
 
 .book-container {
   display: flex;
-  max-width: 1200px;
+  overflow-x: auto;
   gap: 20px;
   scroll-behavior: smooth;
   padding-bottom: 10px;
