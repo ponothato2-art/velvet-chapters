@@ -22,7 +22,7 @@ header h1 {
 }
 nav a {
     color: rgb(4, 0, 0);
-    text-decoration: velvet;
+    text-decoration: none;
     margin: 0 10px;
     
 }
@@ -76,7 +76,8 @@ body {
 }
 
 .ebook-section {
-  padding: 20px;
+
+  padding: 20px 30px;
 }
 
 .ebook-section h2 {
