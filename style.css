@@ -22,9 +22,9 @@ header h1 {
 }
 nav a {
     color: rgb(4, 0, 0);
-    text-decoration: none;
+    text-decoration: velvet;
     margin: 0 10px;
-    flex-flow: column;
+    
 }
 nav a:hover {
     text-decoration: underline;
