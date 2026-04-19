@@ -76,7 +76,7 @@ body {
 }
 
 .ebook-section {
-scroll-margin: calc(-50px + 50%);
+margin-left: calc(-50px + 50%);
   padding: 20px;
 }
 
