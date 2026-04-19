@@ -84,7 +84,7 @@ body {
 
 .book-container {
   display: flex;
-  overflow-x: auto;
+  max-width: 1200px;
   gap: 20px;
   scroll-behavior: smooth;
   padding-bottom: 10px;
