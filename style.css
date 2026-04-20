@@ -76,7 +76,7 @@ body {
 }
 
 .ebook-section {
-  width:100vw; 
+  width:100vw;
   margin-left: calc(-50px + 50%);
   padding: 20px;
 }
@@ -138,5 +138,5 @@ body {
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px;
 }
