@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            background-color: white;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #500505;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #500505;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #eeeeee;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Search Books</h2>
+
+        <input type="text" id="searchInput" placeholder="Enter book name">
+
+        <button onclick="searchBook()">Search</button>
+
+        <p id="message"></p>
+
+        <h3>Books Available</h3>
+
+        <ul id="bookList">
+            <li>Harry Potter</li>
+            <li>Rich Dad Poor Dad</li>
+            <li>The Great Gatsby</li>
+            <li>Atomic Habits</li>
+            <li>The Alchemist</li>
+        </ul>
+
+    </div>
+
+    <script>
+
+        function searchBook() {
+
+            let input = document.getElementById("searchInput").value.toLowerCase();
+
+            let books = document.getElementsByTagName("li");
+
+            let found = false;
+
+            for (let i = 0; i < books.length; i++) {
+
+                let bookName = books[i].textContent.toLowerCase();
+
+                if (bookName.includes(input)) {
+
+                    books[i].style.display = "block";
+
+                    found = true;
+
+                } else {
+
+                    books[i].style.display = "none";
+                }
+            }
+
+            let message = document.getElementById("message");
+
+            if (found) {
+
+                message.innerHTML = "";
+
+            } else {
+
+                message.innerHTML = "Book not found in the website";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
