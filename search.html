@@ -6,115 +6,109 @@
     <title>Book Search</title>
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
             text-align: center;
+            margin-top: 100px;
         }
 
-        .container {
-            width: 400px;
+        .search-container {
             background-color: white;
-            margin: 50px auto;
+            width: 400px;
+            margin: auto;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
         }
 
         input {
             width: 70%;
             padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px 0 0 5px;
         }
 
         button {
             padding: 10px;
-            background-color: #500505;
-            color: white;
             border: none;
+            background-color: blue;
+            color: white;
             cursor: pointer;
+            border-radius: 0 5px 5px 0;
         }
 
         button:hover {
-            background-color: #500505;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            background-color: #eeeeee;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 5px;
+            background-color: darkblue;
         }
 
         #message {
+            margin-top: 15px;
             color: red;
-            margin-top: 10px;
+            font-weight: bold;
         }
+
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="search-container">
 
-        <h2>Search Books</h2>
+        <h2>Find Your Book</h2>
 
-        <input type="text" id="searchInput" placeholder="Enter book name">
+        <div class="search-box">
 
-        <button onclick="searchBook()">Search</button>
+            <input type="text" id="searchInput" placeholder="Search books...">
+
+            <button onclick="searchBook()">🔍</button>
+
+        </div>
 
         <p id="message"></p>
-
-        <h3>Books Available</h3>
-
-        <ul id="bookList">
-            <li>tomorrow died yesterday <div class="pdf">[PDF]</div></li>
-            <li>Rich Dad Poor Dad <div class="pdf">[PDF]</div></li>
-            <li>The Fault in Our Stars <div class="pdf">[PDF]</div></li>
-            <li>Then She Was Gone <div class="pdf">[PDF]</div></li>
-            <li>To the Man I Loved Too Much <div class="pdf">[PDF]</div></li>
-        </ul>
 
     </div>
 
     <script>
 
+        let books = {
+
+            "to the man i loved too much": "books/to-the-man-i-loved-too-much.pdf",
+
+            "then she was gone": "books/then-she-was-gone.pdf",
+
+            "the psychology of money": "books/the-psychology-of-money.pdf",
+
+            "rich dad poor dad": "books/rich-dad-poor-dad.pdf"
+        };
+
         function searchBook() {
 
             let input = document.getElementById("searchInput").value.toLowerCase();
 
-            let books = document.getElementsByTagName("li");
-
-            let found = false;
-
-            for (let i = 0; i < books.length; i++) {
-
-                let bookName = books[i].textContent.toLowerCase();
-
-                if (bookName.includes(input)) {
-
-                    books[i].style.display = "block";
-
-                    found = true;
-
-                } else {
-
-                    books[i].style.display = "none";
-                }
-            }
-
             let message = document.getElementById("message");
 
-            if (found) {
+            if (books[input]) {
+
+                let openBook = confirm(
+                    "Book found! Click OK to open the PDF."
+                );
+
+                if (openBook) {
+
+                    window.location.href = books[input];
+                }
 
                 message.innerHTML = "";
 
             } else {
 
-                message.innerHTML = "Book not found in the website";
+                message.innerHTML = "Book not found in the website.";
             }
         }
 
